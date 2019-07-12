@@ -5,6 +5,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.jakim.screenplay.tasks.FillsInUserData;
 import net.jakim.screenplay.tasks.StartsCreatingAccount;
+import net.serenitybdd.screenplay.Task;
 
 import java.util.Map;
 

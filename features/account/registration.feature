@@ -7,7 +7,6 @@ Feature: Account Registration
   Background:
     Given a not register user is on the "Registration" page
 
-
   Scenario: Successful account creation
     When the user starts creating new account:
       | title | name | lastname | email            | password | dateOfBirth |
