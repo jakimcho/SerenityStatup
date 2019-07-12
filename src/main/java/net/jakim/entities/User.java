@@ -1,4 +1,4 @@
-git package net.jakim.entities;
+package net.jakim.entities;
 
 public class User {
 
