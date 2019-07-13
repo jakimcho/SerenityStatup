@@ -21,4 +21,4 @@ Before start building your awesome automation system based on this project, you 
 - [Serenity Reference Manual](http://thucydides.info/docs/serenity-staging/)
 - [The Serenity BDD Book](https://serenity-bdd.github.io/theserenitybook/latest/index.html)
 - [Screen Play](http://serenity-bdd.info/docs/articles/screenplay-tutorial.html)
-- [Screen Play with Cucumber Demo project]https://github.com/serenity-bdd/screenplay-pattern-todomvc)
+- [Screen Play with Cucumber Demo project](https://github.com/serenity-bdd/screenplay-pattern-todomvc)

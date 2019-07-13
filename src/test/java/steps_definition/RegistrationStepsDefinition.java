@@ -3,7 +3,9 @@ package steps_definition;
 import cucumber.api.Transpose;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import net.jakim.entities.User;
 import net.jakim.screenplay.tasks.FillsInUserData;
+import net.jakim.screenplay.tasks.InRegistrationFrom;
 import net.jakim.screenplay.tasks.StartsCreatingAccount;
 import net.serenitybdd.screenplay.Task;
 
@@ -17,8 +19,14 @@ public class RegistrationStepsDefinition
     @When( "the user starts creating new account:" )
     public void theUserCompletesForm( @Transpose Map<String, String> dataTable )
     {
-        theActorInTheSpotlight( ).attemptsTo( StartsCreatingAccount.withEmail( dataTable.get( "email" ) ),
-                                              FillsInUserData.inCreateAnAccountForm( dataTable ) );
+        User user = new User( );
+        user.setFirstName( dataTable.get( "firstName" ) );
+        user.setLastName( dataTable.get( "lastName" ) );
+        user.setEmail( dataTable.get( "email" ) );
+        user.setPassword( dataTable.get( "password" ) );
+
+        theActorInTheSpotlight( ).attemptsTo( StartsCreatingAccount.withEmail( dataTable.get( user.getEmail() ) ),
+                                              InRegistrationFrom.enterUserInfo( user ) );
     }
 
     @Then( "he is successful registered in the system" )
