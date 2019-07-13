@@ -11,10 +11,10 @@ Feature: Account Registration
   @jr:demo
   Scenario: Successful account creation
     When the user starts creating new account:
-      | title | fisrtName | lastName | email            | password | dateOfBirth |
-      | mr    | Joro      | ivanov   | j.ivanov@fds.csm | dasdas   | 11/11/1983  |
+      | title | firstName | lastName | email        | password |
+      | mr    | Joro      | ivanov   | j.gf@fds.csm | dasdas   |
     And fills in his address in the form:
-      | title | name | lastname | email            | password | dateOfBirth |
-      | mr    | Joro | ivanov   | j.ivanov@fds.csm | dasdas   | 11/11/1983  |
+      | company | address        | city  | state   | country       | zip   | mobilePhone | addressAlias |
+      | Gogo    | str Lisitsa 51 | Sofia | Alabama | United States | 15025 | 432423423   | homeAddr     |
     And submits the form
     Then he is successful registered in the system

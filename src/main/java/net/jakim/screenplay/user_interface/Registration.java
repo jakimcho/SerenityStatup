@@ -20,11 +20,11 @@ public class Registration
     public static Target CUSTOMER_LAST_NAME_FIELD = Target.the( "customer 'Last name' field in the registration form" )
                                                           .located( By.name( "customer_lastname" ) );
 
-    public static Target CUSTOMER_EMAIL_FIELD = Target.the( "customer 'Last name' field in the registration form" )
-                                                      .located( By.name( "customer_lastname" ) );
+    public static Target CUSTOMER_EMAIL_FIELD = Target.the( "customer 'Email' field in the registration form" )
+                                                      .located( By.name( "email" ) );
 
     public static Target CUSTOMER_PASSWORD_FIELD = Target.the( "customer 'Password' field in the registration form" )
-                                                         .located( By.name( "password" ) );
+                                                         .located( By.name( "passwd" ) );
 
     public static Target CUSTOMER_BIRTHDATE_FIELD = Target.the( "customer 'Last name' field in the registration form" )
                                                           .located( By.xpath( "//div[contains(@class,'form-group') and ./label[text()='Date of Birth']]" ) );
@@ -53,8 +53,8 @@ public class Registration
     public static Target COUNTRY_FIELD = Target.the( "'Country' field in the registration form" )
                                                .located( By.name( "id_country" ) );
 
-    public static Target MBILE_PHONE_FIELD = Target.the( "'Mobile phone' field in the registration form" )
-                                                   .located( By.name( "phone_mobile" ) );
+    public static Target MOBILE_PHONE_FIELD = Target.the( "'Mobile phone' field in the registration form" )
+                                                    .located( By.name( "phone_mobile" ) );
 
     public static Target ADDRESS_ALIAS_FIELD = Target.the( "address 'Alias' field in the registration form" )
                                                      .located( By.name( "alias" ) );

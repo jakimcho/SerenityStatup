@@ -13,7 +13,7 @@ public class Address
     private String zip;
     private String country;
     private String additionalInformation;
-    private String homePhone;
+    private String mobilePhone;
     private String addressAlias;
 
     public Address( )
@@ -127,14 +127,14 @@ public class Address
         this.additionalInformation = additionalInformation;
     }
 
-    public String getHomePhone( )
+    public String getMobilePhone( )
     {
-        return homePhone;
+        return mobilePhone;
     }
 
-    public void setHomePhone( String homePhone )
+    public void setMobilePhone( String mobilePhone )
     {
-        this.homePhone = homePhone;
+        this.mobilePhone = mobilePhone;
     }
 
     public String getAddressAlias( )
