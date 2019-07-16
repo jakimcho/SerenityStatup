@@ -30,7 +30,7 @@ Each data table in gherkin that representing a unit shall be handle as follows:
             Entity e = EntityBuilderFactory.buildEntity().fromMap(rawData).build();
         }
     ```
-  - in order to inject some randomization in the values use [A5] for 5 random upper-case alpha bet letters, [a2] for 5 random down-case alpha bet letters and [d4] for random 4 digits
+  - in order to inject some randomization in the values use [5A] for 5 random upper-case alpha bet letters, [2a] for 2 random down-case alpha bet letters and [4d] for random 4 digits
   ```
     And user enters his details:
     | name | email           | password       | sirName |
