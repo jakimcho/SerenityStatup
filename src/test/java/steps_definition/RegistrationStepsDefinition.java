@@ -13,6 +13,7 @@ import net.serenitybdd.core.environment.EnvironmentSpecificConfiguration;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.util.EnvironmentVariables;
 import net.thucydides.core.util.SystemEnvironmentVariables;
+import utils.EntitiesBuildersFactory;
 
 import java.util.Map;
 
@@ -26,62 +27,48 @@ public class RegistrationStepsDefinition
     private User user;
 
     @When( "the user starts creating new account:" )
-    public void theUserCompletesForm( @Transpose Map<String, String> dataTable )
+    public void theUserCompletesForm( @Transpose Map<String, String> rawData )
     {
-        user = new User( );
-        user.setFirstName( dataTable.get( "firstName" ) );
-        user.setLastName( dataTable.get( "lastName" ) );
-        user.setEmail( dataTable.get( "email" ) );
-        user.setPassword( dataTable.get( "password" ) );
-
-        theActorInTheSpotlight( ).attemptsTo( StartsCreatingAccount.withEmail( user.getEmail( ) ),
-                                              InRegistrationFrom.entersUserInfo( user ) );
+        user = EntitiesBuildersFactory.getUserBuilder()
+                                      .fromMap( rawData )
+                                      .build();
+        theActorInTheSpotlight().attemptsTo( StartsCreatingAccount.withEmail( user.getEmail() ),
+                                             InRegistrationFrom.entersUserInfo( user ) );
     }
 
     @When( "fills in his address in the form:" )
-    public void fillsInHisAddressInTheForm( @Transpose Map<String, String> dataTable )
+    public void fillsInHisAddressInTheForm( @Transpose Map<String, String> rawData )
     {
-        Address address;
-        if( dataTable.get( "lastName" ) == null && dataTable.get( "firstName" ) == null )
+        Address address = EntitiesBuildersFactory.getAddressBuilder()
+                                                 .fromMap( rawData )
+                                                 .build();
+        if ( address.getFirstName() == null && address.getFirstName() == null )
         {
-            address = new Address( user );
-        } else
-        {
-            address = new Address( );
-            address.setFirstName( dataTable.get( "firstName" ) );
-            address.setFirstName( dataTable.get( "lastName" ) );
+            address.setFirstName( user.getFirstName() );
+            address.setLastName( user.getLastName() );
         }
 
-        address.setCompany( dataTable.get( "company" ) );
-        address.setAddress( dataTable.get( "address" ) );
-        address.setCity( dataTable.get( "city" ) );
-        address.setCountry( dataTable.get( "country" ) );
-        address.setState( dataTable.get( "state" ) );
-        address.setZip( dataTable.get( "zip" ) );
-        address.setMobilePhone( dataTable.get( "mobilePhone" ) );
-        address.setAddressAlias( dataTable.get( "addressAlias" ) );
-
         user.setAddress( address );
-        theActorInTheSpotlight( ).attemptsTo( InRegistrationFrom.entersAddressInfo( user.getAddress( ) ) );
+        theActorInTheSpotlight().attemptsTo( InRegistrationFrom.entersAddressInfo( user.getAddress() ) );
     }
 
     @When( "submits the form" )
-    public void submitsTheForm( )
+    public void submitsTheForm()
     {
-        theActorInTheSpotlight( ).attemptsTo( InRegistrationFrom.submitsForm( ) );
+        theActorInTheSpotlight().attemptsTo( InRegistrationFrom.submitsForm() );
     }
 
     @Then( "he is successful registered in the system" )
-    public void heIsSuccessfulRegisteredInTheSystem( )
-    throws
+    public void heIsSuccessfullyRegisteredInTheSystem()
+            throws
             InterruptedException
     {
         Thread.sleep( 2000 );
-        EnvironmentVariables ev = SystemEnvironmentVariables.createEnvironmentVariables( );
+        EnvironmentVariables ev = SystemEnvironmentVariables.createEnvironmentVariables();
         String accountPageURL = EnvironmentSpecificConfiguration.from( ev )
                                                                 .getProperty( "my-account.page" );
 
-        theActorInTheSpotlight( ).should( seeThat( CurrentPage.url( ),
-                                                   is( accountPageURL ) ) );
+        theActorInTheSpotlight().should( seeThat( CurrentPage.url(),
+                                                  is( accountPageURL ) ) );
     }
 }

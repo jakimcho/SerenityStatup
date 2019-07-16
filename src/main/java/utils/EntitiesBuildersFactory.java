@@ -1,5 +1,7 @@
 package utils;
 
+import net.jakim.entities.Address;
+import net.jakim.entities.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,7 +20,14 @@ public abstract class EntitiesBuildersFactory
 {
     private static Logger LOGGER = LoggerFactory.getLogger( EntitiesBuildersFactory.class );
 
+    public static User.Builder getUserBuilder( )
+    {
+        return new User.Builder();
+    }
 
-
+    public static Address.Builder getAddressBuilder()
+    {
+        return new Address.Builder();
+    }
 }
 

@@ -1,5 +1,7 @@
 package net.jakim.entities;
 
+import utils.AbstractEntitiesBuilder;
+
 public class Address
 {
 
@@ -16,18 +18,45 @@ public class Address
     private String mobilePhone;
     private String addressAlias;
 
-    public Address( )
+    public Address()
     {
         super();
     }
 
-    public Address( final User user)
+    public Address( String firstName,
+                    String lastName,
+                    String company,
+                    String address,
+                    String address2,
+                    String city,
+                    String state,
+                    String zip,
+                    String country,
+                    String additionalInformation,
+                    String mobilePhone,
+                    String addressAlias )
     {
-        this.firstName = user.getFirstName();
-        this.firstName = user.getLastName( );
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.company = company;
+        this.address = address;
+        this.address2 = address2;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+        this.country = country;
+        this.additionalInformation = additionalInformation;
+        this.mobilePhone = mobilePhone;
+        this.addressAlias = addressAlias;
     }
 
-    public String getFirstName( )
+    public Address( final User user )
+    {
+        this.firstName = user.getFirstName();
+        this.firstName = user.getLastName();
+    }
+
+    public String getFirstName()
     {
         return firstName;
     }
@@ -37,7 +66,7 @@ public class Address
         this.firstName = firstName;
     }
 
-    public String getLastName( )
+    public String getLastName()
     {
         return lastName;
     }
@@ -47,7 +76,7 @@ public class Address
         this.lastName = lastName;
     }
 
-    public String getCompany( )
+    public String getCompany()
     {
         return company;
     }
@@ -57,7 +86,7 @@ public class Address
         this.company = company;
     }
 
-    public String getAddress( )
+    public String getAddress()
     {
         return address;
     }
@@ -67,7 +96,7 @@ public class Address
         this.address = address;
     }
 
-    public String getAddress2( )
+    public String getAddress2()
     {
         return address2;
     }
@@ -77,7 +106,7 @@ public class Address
         this.address2 = address2;
     }
 
-    public String getCity( )
+    public String getCity()
     {
         return city;
     }
@@ -87,7 +116,7 @@ public class Address
         this.city = city;
     }
 
-    public String getState( )
+    public String getState()
     {
         return state;
     }
@@ -97,7 +126,7 @@ public class Address
         this.state = state;
     }
 
-    public String getZip( )
+    public String getZip()
     {
         return zip;
     }
@@ -107,7 +136,7 @@ public class Address
         this.zip = zip;
     }
 
-    public String getCountry( )
+    public String getCountry()
     {
         return country;
     }
@@ -117,7 +146,7 @@ public class Address
         this.country = country;
     }
 
-    public String getAdditionalInformation( )
+    public String getAdditionalInformation()
     {
         return additionalInformation;
     }
@@ -127,7 +156,7 @@ public class Address
         this.additionalInformation = additionalInformation;
     }
 
-    public String getMobilePhone( )
+    public String getMobilePhone()
     {
         return mobilePhone;
     }
@@ -137,7 +166,7 @@ public class Address
         this.mobilePhone = mobilePhone;
     }
 
-    public String getAddressAlias( )
+    public String getAddressAlias()
     {
         return addressAlias;
     }
@@ -146,4 +175,38 @@ public class Address
     {
         this.addressAlias = addressAlias;
     }
+
+    public static class Builder
+            extends AbstractEntitiesBuilder<Builder>
+    {
+        private String firstName;
+        private String lastName;
+        private String company;
+        private String address;
+        private String address2;
+        private String city;
+        private String state;
+        private String zip;
+        private String country;
+        private String additionalInformation;
+        private String mobilePhone;
+        private String addressAlias;
+
+        public Address build()
+        {
+            return new Address( this.firstName,
+                                this.lastName,
+                                this.company,
+                                this.address,
+                                this.address2,
+                                this.city,
+                                this.state,
+                                this.zip,
+                                this.country,
+                                this.additionalInformation,
+                                this.mobilePhone,
+                                this.addressAlias );
+        }
+    }
 }
+
