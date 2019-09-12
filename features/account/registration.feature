@@ -5,14 +5,15 @@ Feature: Account Registration
   In order to have a system account
 
   Background:
-    Given a not register user is on the "Registration" page
+    Given a new user is on the "Registration" page
 
+  @jr:demo
   Scenario: Successful account creation
     When the user starts creating new account:
-      | title | name | lastname | email            | password | dateOfBirth |
-      | mr    | Joro | ivanov   | j.ivanov@fds.csm | dasdas   | 11/11/1983  |
+      | title | firstName | lastName | email                | password    |
+      | mr    | Joro[3A]  | ivanov   | j.ivanov[5a]@fds.csm | dasdas[10d] |
     And fills in his address in the form:
-      | title | name | lastname | email            | password | dateOfBirth |
-      | mr    | Joro | ivanov   | j.ivanov@fds.csm | dasdas   | 11/11/1983  |
+      | firstName | lastName | company | address   | city     | state  | postalCode | country     | mobilePhone   | alias      |
+      | Joro[3A]  | ivanov   | strypes | somewhere | someCity | Alaska | [5d]       | someCountry | somePhone[5d] | potato[3A] |
     And submits the form
     Then he is successful registered in the system

@@ -31,7 +31,6 @@
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-core</artifactId>
             <version>${serenity.version}</version>
-            <scope>test</scope>
             <exclusions>
                 <exclusion>
                     <groupId>io.cucumber</groupId>

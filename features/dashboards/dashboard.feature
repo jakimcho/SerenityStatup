@@ -7,7 +7,6 @@ Feature: Dashboard
       | username | password      |
       | lbandrov | ASMLlyubo2023 |
 
-  @jr:demo
   Scenario: Successful Dashboard creation
     When the user starts creating new dashboard:
       | name           | description     |
@@ -18,3 +17,11 @@ Feature: Dashboard
       | MEAN_Amp_RM20_Temp |
     And the user saves the dashboard
     Then the dashboard is created
+
+
+  Scenario: Successful registration
+    Given a user is on "Registration" page
+    When the user complete the registration form:
+      | first_name | sir_name | email               | password  | confirm_password | birth_date |
+      | Ivan       | Ivanov   | ivan.ivano@some.dom | A2s$ma!xf | A2s$ma!xf        | 05/12/1993 |
+    Then the user is successfully registered

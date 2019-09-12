@@ -75,7 +75,7 @@ public abstract class AbstractEntitiesBuilder<T extends AbstractEntitiesBuilder>
                                  LOGGER.error( "Did not found such field {}",
                                                key );
                                  e.printStackTrace( );
-                                 throw new NoSuchElementException( "Did not found such field {}" );
+                                 throw new NoSuchElementException( "Did not found such field " + key );
                              } catch( IllegalAccessException e )
                              {
                                  LOGGER.error( "Cannot assign value {} to field {}",
