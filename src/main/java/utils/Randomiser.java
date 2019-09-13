@@ -119,7 +119,7 @@ public class Randomiser
                 arr = LOWER_CASE_LETTERS;
                 break;
             case REPLACE_WITH_DIGITS:
-                pattern = Pattern.compile( "\\[\\d*\\]" );
+                pattern = Pattern.compile( "\\[\\d*d\\]" );
                 arr = DIGITS;
                 break;
             default:

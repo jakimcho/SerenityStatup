@@ -11,9 +11,9 @@ Feature: Account Registration
   Scenario: Successful account creation
     When the user starts creating new account:
       | title | firstName | lastName | email                | password    |
-      | mr    | Joro[3A]  | ivanov   | j.ivanov[5a]@fds.csm | dasdas[10d] |
+      | Mr.   | Joro[3A]  | ivanov   | j.ivanov[5a]@fds.csm | dasdas[10d] |
     And fills in his address in the form:
-      | firstName | lastName | company | address   | city     | state  | postalCode | country     | mobilePhone   | alias      |
-      | Joro[3A]  | ivanov   | strypes | somewhere | someCity | Alaska | [5d]       | someCountry | somePhone[5d] | potato[3A] |
+      | firstName | lastName | company | address   | city     | state  | postalCode | country     | mobilePhone | alias      |
+      | Joro[3A]  | ivanov   | strypes | somewhere | someCity | Alaska | [5d]       | someCountry | [10d]       | potato[3A] |
     And submits the form
     Then he is successful registered in the system

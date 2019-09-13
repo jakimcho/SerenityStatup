@@ -16,10 +16,10 @@ public class RegistrationPage
     @FindBy( name = "email_create" )
     public WebElementFacade emailCreateField;
 
-    @FindBy( id = "id_gender1" )
+    @FindBy( id = "uniform-id_gender1" )
     public WebElementFacade titleMr;
 
-    @FindBy( id = "id_gender2" )
+    @FindBy( id = "uniform-id_gender2" )
     public WebElementFacade titleMrs;
 
     @FindBy( id = "customer_firstname" )
