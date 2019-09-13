@@ -34,7 +34,7 @@ Each data table in gherkin that representing a unit shall be handle as follows:
   ```
     And user enters his details:
     | name | email           | password       | sirName |
-    | Ivan | iv[a4]@dodo.com | [3d]![2A]$[5a] | Goranov |
+    | Ivan | iv[4a]@dodo.com | [3d]![2A]$[5a] | Goranov |
   ```
 
 ## Useful Info
