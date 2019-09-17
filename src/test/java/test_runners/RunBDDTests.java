@@ -19,7 +19,7 @@ import org.junit.runner.RunWith;
         features = "features/",
         glue = "steps_definition",
         snippets = SnippetType.CAMELCASE,
-        tags = { "@jr:demo" } )
+        tags = { "@regression" } )
 public class RunBDDTests
 {
 
