@@ -6,7 +6,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.Keys;
 
-@DefaultUrl( "http://automationpractice.com/index.php?controller=authentication&back=my-account" )
+@DefaultUrl( "/index.php?controller=authentication&back=my-account" )
 public class RegistrationPage
         extends PageObject
 {

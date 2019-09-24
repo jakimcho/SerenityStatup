@@ -5,7 +5,7 @@ import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 
-@DefaultUrl( "http://automationpractice.com/index.php?controller=my-account" )
+@DefaultUrl( "/index.php?controller=my-account" )
 public class MyAccountPage extends PageObject
 {
     @FindBy( className = "info-account" )

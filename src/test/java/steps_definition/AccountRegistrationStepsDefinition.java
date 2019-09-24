@@ -28,7 +28,6 @@ public class AccountRegistrationStepsDefinition
         }
     }
 
-
     @When( "the user starts creating new account:" )
     public void theUserStartsCreatingNewAccount( @Transpose Map<String, String>
                                                          userPersonalProperties )
