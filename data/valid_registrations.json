@@ -1,0 +1,42 @@
+{
+  "mandatory_fields_only": {
+    "title": "mr",
+    "firstName": "Georgi[4A]",
+    "lastName": "Ivanov[4A]",
+    "email": "georgi_[5a]@auto.[5a]",
+    "password": "fdDfds3@_ds",
+    "birthDate": "22/02/2000",
+    "address": {
+      "company": "Some Company",
+      "address": "address_1_[4d]",
+      "address2": "address_1_[4d]",
+      "city": "Sofia",
+      "state": "Bulgaria",
+      "zip": "10000",
+      "country": "Bulgaria",
+      "additionalInformation": "No more info for you",
+      "mobilePhone": "534543534",
+      "addressAlias": "gosho[4a]"
+    }
+  },
+  "dasda": {
+    "title": "mr",
+    "firstName": "Georgi[4A]",
+    "lastName": "Ivanov[4A]",
+    "email": "georgi_[5a]@auto.[5a]",
+    "password": "fdDfds3@_ds",
+    "birthDate": "22/02/2000",
+    "address": {
+      "company": "Some Company",
+      "address": "address_1_[4d]",
+      "address2": "address_1_[4d]",
+      "city": "Sofia",
+      "state": "Bulgaria",
+      "zip": "10000",
+      "country": "Bulgaria",
+      "additionalInformation": "No more info for you",
+      "mobilePhone": "534543534",
+      "addressAlias": "gosho[4a]"
+    }
+  }
+}
