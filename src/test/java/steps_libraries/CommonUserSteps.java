@@ -4,6 +4,7 @@ import net.jakim.entities.Address;
 import net.jakim.entities.User;
 import net.jakim.page_object.MyAccountPage;
 import net.jakim.page_object.RegistrationPage;
+import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.Step;
 
 import static org.assertj.core.api.Assertions.*;
@@ -77,5 +78,12 @@ public class CommonUserSteps
 //        assertThat(myAccountPage.getDriver().getCurrentUrl())
         assertThat( myAccountPage.infoAccountText.getText( )
                                                  .trim( ) ).isEqualTo( "Welcome to your account. Here you can manage all of your personal information and orders." );
+    }
+
+    public void testConfigLocators()
+    {
+        WebElementFacade e1 = registrationPage.getTestWebelement1();
+        WebElementFacade e2 = registrationPage.getTestWebelement2();
+        WebElementFacade e3 = registrationPage.getTestWebelement3();
     }
 }

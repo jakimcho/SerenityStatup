@@ -1,9 +1,11 @@
 package net.jakim.page_object;
 
+import net.jakim.utils.JRBy;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
 @DefaultUrl( "/index.php?controller=authentication&back=my-account" )
@@ -67,25 +69,44 @@ public class RegistrationPage
     @FindBy( id = "submitAccount" )
     public WebElementFacade submitAccountButton;
 
+    public static By testCustomLocator1 = JRBy.configProps( "test.custom.locator.1" );
+    public static By testCustomLocator2 = JRBy.configProps( "test.custom.locator.2" );
+    public static By testCustomLocator3 = JRBy.configProps( "test.custom.locator.3" );
+
     public void selectTitle( String title )
     {
-        if( title.equalsIgnoreCase( "Mr." ) )
+        if ( title.equalsIgnoreCase( "Mr." ) )
         {
-            titleMr.click( );
+            titleMr.click();
         } else
         {
-            titleMrs.click( );
+            titleMrs.click();
         }
     }
 
     public void typeInDropDown( final WebElementFacade dropDown,
                                 String item )
     {
-        withAction( ).click( dropDown )
-                     .pause( 200 )
-                     .sendKeys( item )
-                     .pause( 250 )
-                     .sendKeys( Keys.ENTER )
-                     .perform( );
+        withAction().click( dropDown )
+                    .pause( 200 )
+                    .sendKeys( item )
+                    .pause( 250 )
+                    .sendKeys( Keys.ENTER )
+                    .perform();
+    }
+
+    public WebElementFacade getTestWebelement1()
+    {
+        return this.find( testCustomLocator1 );
+    }
+
+    public WebElementFacade getTestWebelement2()
+    {
+        return this.find( testCustomLocator2 );
+    }
+
+    public WebElementFacade getTestWebelement3()
+    {
+        return this.find( testCustomLocator3 );
     }
 }

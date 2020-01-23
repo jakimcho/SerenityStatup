@@ -21,11 +21,15 @@ public class AccountRegistrationStepsDefinition
     @Given( "a new user is on the {string} page" )
     public void aNewUserIsOnThePage( String pageName )
     {
+
+
         switch( pageName )
         {
             case "Registration":
                 commonUser.opensRegistrationPage( );
         }
+
+        commonUser.testConfigLocators();
     }
 
     @When( "the user starts creating new account:" )
