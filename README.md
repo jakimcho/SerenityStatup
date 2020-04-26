@@ -20,10 +20,10 @@ The main target approach to follow is BDD with cucumber.
 ### Handle data tables from gherkin scenarios
 
 Each data table in gherkin that representing a unit shall be handle as follows:
- - define a Class representing the unit in the entities package.
+ - define a Class representing the unit in the net.jakim.testing.entities package.
  - define a Builder class that extends the AbstractEntitiesBuilder class for the created Entity class (see the already created Dashboard.class)
  - in the gherkin data tables define the table with column names equal to the Entity properties' names
- - in the steps definition files, convert these data tables like so:
+ - in the net.jakim.testing.steps definition files, convert these data tables like so:
     ```
         @Given("[some_pattern]")
         public void doSomething(@Transpose Мап<String, String> rawData){

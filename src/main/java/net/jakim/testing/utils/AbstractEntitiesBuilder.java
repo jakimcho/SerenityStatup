@@ -1,4 +1,4 @@
-package utils;
+package net.jakim.testing.utils;
 
 
 import org.slf4j.Logger;

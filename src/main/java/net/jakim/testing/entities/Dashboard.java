@@ -1,6 +1,6 @@
-package entities;
+package net.jakim.testing.entities;
 
-import utils.AbstractEntitiesBuilder;
+import net.jakim.testing.utils.AbstractEntitiesBuilder;
 
 public class Dashboard
 {

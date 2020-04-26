@@ -1,21 +1,20 @@
-package test_runners;
+package net.jakim.testing.runners;
 
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.SnippetType;
+import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
 
 @RunWith( CucumberWithSerenity.class )
-@CucumberOptions(
+@CucumberOptions (
         plugin =
                 {
                         "json:target/cucumber.json",
                         "junit:target/cucumber.xml"
                 },
         features = "features/",
-        glue = "steps_definition",
-        snippets = SnippetType.CAMELCASE,
+        glue = "net/jakim/testing/steps",
+        snippets = CucumberOptions.SnippetType.CAMELCASE,
         tags = { "" } )
 public class RunBDDTests
 {
