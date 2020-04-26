@@ -10,6 +10,8 @@ public class Registration
 
     public static Target CREATE_ACCOUNT_BUTTON = Target.the( "'Create an account' button" )
                                                        .locatedBy( "#SubmitCreate" );
+    public static Target CREATE_ACCOUNT_BUTTON_WRONG = Target.the( "'Create an account' button" )
+        .locatedBy( "#SubmitCreateq" );
     public static Target FIRST_NAME_FIELD = Target.the( "'First name' field from the reg. form" )
                                                   .located( By.name( "customer_firstname" ) );
 
