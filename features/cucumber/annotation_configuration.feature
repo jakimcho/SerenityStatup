@@ -17,9 +17,22 @@ Feature: Annotation Configuration
     When a user places the awestruck eels in his basket
     Then you will be shocked at what happened next
 
-  Scenario: ParameterType Annotation Configuration
+  Scenario: DataTableType Annotation Configuration
     When a user orders products:
       | name     | vendor | type  |
       | Milk     | Danone | dairy |
       | sausages | Tandem | meat  |
     Then order is placed successfully
+
+  Scenario: DataTableType Annotation Cell Configuration
+    When a user orders products by id:
+      |   | name     | vendor | type  |
+      | 2 | Milk     | Danone | dairy |
+      | 4 | sausages | Tandem | meat  |
+    Then order with ids is placed successfully
+
+  Scenario: DataTableType Annotation Java Object Configuration
+    When a user creates new account:
+      | firstName | surName | age |
+      | Georgi    | Ivanov  | 18  |
+    Then the user account is created successfully
