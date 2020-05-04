@@ -4,6 +4,7 @@ import io.appium.java_client.android.AndroidDriver;
 import lombok.extern.java.Log;
 import lombok.extern.slf4j.Slf4j;
 import net.jakim.testing.pages.MainPage;
+import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.webdriver.WebDriverFacade;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Point;
@@ -72,8 +73,8 @@ public class LoginActions
     public void tapsOn( By byLocator )
     {
         log.info( "Inside tapsOn() method" );
-        mainPage.waitForWebContextAvailability( );
-        mainPage.switchToWebViewContext( );
+       // mainPage.waitForWebContextAvailability( );
+       // mainPage.switchToWebViewContext( );
         mainPage.tapOn( byLocator );
         mainPage.switchToNativeContext( );
         log.info( "Exiting tapsOn() method" );
@@ -85,11 +86,9 @@ public class LoginActions
         log.info( "Inside entersTextInField() method" );
         mainPage.waitForWebContextAvailability( );
         mainPage.switchToWebViewContext( );
-        mainPage
-            .find( fieldLocator )
-            .waitUntilEnabled( )
-            .and( )
-            .type( text );
+        WebElementFacade el = mainPage
+            .find( fieldLocator );
+        el.type( text );
 
         log.info( "Exiting entersTextInField() method" );
     }
