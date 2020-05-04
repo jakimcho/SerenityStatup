@@ -15,3 +15,13 @@ Feature: Cucumber Expression
     When she adds 5 items to her cart
     And she process the order
     Then the order is processed successfully
+
+  Scenario: Optional Text with Pronoun John
+    Given John has entered the app
+    When he lists the first 5 articles
+    Then only those news are presented
+
+  Scenario: Optional Text with Pronoun Annie
+    Given Merry Jane has entered the app
+    When she lists the first 5 articles
+    Then only those news are presented
