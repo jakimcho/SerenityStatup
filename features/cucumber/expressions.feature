@@ -25,3 +25,7 @@ Feature: Cucumber Expression
     Given Merry Jane has entered the app
     When she lists the first 5 articles
     Then only those news are presented
+
+  Scenario: Optional Text with Cucumber 2 Annie
+    When a person knows what is his problem
+    Then only Valery Bojinov knows what is his own problem

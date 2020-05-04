@@ -34,7 +34,7 @@ public class CucumberExpressions
     }
 
     @Given ( "(.*) has entered the app" )
-    public void enterTheApp( String s )
+    public void enterTheApp( )
     {
         log.info( "John or Merry Jane has entered the app {}" );
     }
@@ -50,6 +50,19 @@ public class CucumberExpressions
     public void verifyShownArticles( )
     {
         log.info( "only those news are presented" );
+    }
+
+    @When ( "^a person knows what is his problem$" )
+    public void personKnows( )
+    {
+        log.info( "a person knows what is his problem" );
+    }
+
+    @Then ( "^only (?:.*) knows what is his own problem$" ) //Cucumber 2
+    @Then ( "only Valery Bojinov" ) //Cucumber 5
+    public void verifyWhoKnowWhat( )
+    {
+        log.info( "only somebody else knows what is his own problem" );
     }
 
 }
