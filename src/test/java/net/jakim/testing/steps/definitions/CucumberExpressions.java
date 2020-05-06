@@ -4,14 +4,17 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lombok.extern.slf4j.Slf4j;
+import net.jakim.testing.pages.MainPage;
 
 @Slf4j
 public class CucumberExpressions
 {
+    private MainPage mainPage;
     @Given ( "John/Annie has started the app" )
     public void startTheApp( )
     {
         log.info( "John or Annie has started the app" );
+        mainPage.open();
     }
 
     @When ( "he/she adds {int} elements/items/stocks to his/her cart" )
