@@ -29,6 +29,7 @@ public class ConfigurationAnnotationDefinitions
     @Given ( "the {catalog} catalog" )
     public void prepareCatalog( Catalog catalog )
     {
+
         this.catalog = catalog;
     }
 
