@@ -9,10 +9,10 @@ The main target approach to follow is BDD with cucumber.
 
 ## Techs
 
-- Serenity Framework 
+- Serenity Framework 2.3.2 
 - Selenium WebDriver
-- Cucumber 4
-- Junit 4.12
+- Cucumber 6
+- Junit 4.13
 - AssertJ
 
 ## Usage

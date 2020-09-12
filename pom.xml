@@ -14,15 +14,20 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <encoding>UTF-8</encoding>
-        <serenity.version>2.0.56</serenity.version>
-        <cucumber.version>4.2.0</cucumber.version>
-        <serenity.cucumber4.version>1.0.15</serenity.cucumber4.version>
+        <maven.compiler.target>1.9</maven.compiler.target>
+        <maven.compiler.source>1.9</maven.compiler.source>
+        <surefire.version>3.0.0-M5</surefire.version>
+        <failsafe.version>3.0.0-M5</failsafe.version>
+
+        <serenity.version>2.3.2</serenity.version>
+        <serenity.maven.version>2.3.2</serenity.maven.version>
+        <serenity.cucumber6.version>2.3.2</serenity.cucumber6.version>
+        <cucumber.version>6.6.0</cucumber.version>
         <log4j.version>1.2.17</log4j.version>
         <slf4j.version>1.7.26</slf4j.version>
-        <junit.version>4.12</junit.version>
-        <surefire.version>2.22.0</surefire.version>
-        <failsafe.version>2.22.0</failsafe.version>
-        <assertj.version>3.12.0</assertj.version>
+        <junit.version>4.13</junit.version>
+        <assertj.version>3.16.1</assertj.version>
+        <lombok.version>1.18.12</lombok.version>
     </properties>
 
     <dependencies>
@@ -31,19 +36,12 @@
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-core</artifactId>
             <version>${serenity.version}</version>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>io.cucumber</groupId>
-                    <artifactId>cucumber-core</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <dependency>
             <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-cucumber4</artifactId>
-            <version>${serenity.cucumber4.version}</version>
+            <artifactId>serenity-cucumber6</artifactId>
+            <version>${serenity.cucumber6.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -51,12 +49,9 @@
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>${cucumber.version}</version>
+            <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <version>${cucumber.version}</version>
-        </dependency>
+
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -73,6 +68,7 @@
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <version>${assertj.version}</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -82,20 +78,17 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
+
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                    <verbose>true</verbose>
-                    <compilerVersion>8</compilerVersion>
-                </configuration>
-            </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -110,7 +103,7 @@
                 <version>${failsafe.version}</version>
                 <configuration>
                     <includes>
-                        <include>test_runners.RunBDDTests</include>
+                        <include>RunBDDTests</include>
                     </includes>
                 </configuration>
                 <executions>
@@ -126,7 +119,7 @@
             <plugin>
                 <groupId>net.serenity-bdd.maven.plugins</groupId>
                 <artifactId>serenity-maven-plugin</artifactId>
-                <version>${serenity.version}</version>
+                <version>${serenity.maven.version}</version>
                 <executions>
                     <execution>
                         <id>serenity-reports</id>
