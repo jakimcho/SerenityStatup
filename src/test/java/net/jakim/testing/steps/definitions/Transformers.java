@@ -10,44 +10,43 @@ import net.jakim.testing.entities.User;
 
 import java.util.Map;
 
-public class Transformers
-{
+public class Transformers {
 
-    @ParameterType ( "[a-z]+" )
-    public Catalog catalog( String catalogName )
-    {
-        return new Catalog( catalogName );
+    @ParameterType("[a-z]+")
+    public Catalog catalog(String catalogName) {
+        return new Catalog(catalogName);
     }
 
-    @ParameterType ( "[a-z ]+" )
-    public Product product( String productName )
-    {
-        return new Product( productName );
+    @ParameterType("[a-z ]+")
+    public Product product(String productName) {
+        return new Product(productName);
+    }
+
+    @ParameterType("Home|Find Owners|Add Owner|Veterinarians")
+    public String page(String page) {
+        return page;
     }
 
     @DataTableType
-    public Product products( Map<String, String> rawProducts )
-    {
-        Product product = new Product( rawProducts.get( "name" ) );
-        product.setVendor( rawProducts.get( "vendor" ) );
-        product.setType( rawProducts.get( "type" ) );
+    public Product products(Map<String, String> rawProducts) {
+        Product product = new Product(rawProducts.get("name"));
+        product.setVendor(rawProducts.get("vendor"));
+        product.setType(rawProducts.get("type"));
         return product;
     }
 
     @DataTableType
-    public ProductId getProductId( String cell )
-    {
-        return new ProductId( Integer.parseInt( cell ) );
+    public ProductId getProductId(String cell) {
+        return new ProductId(Integer.parseInt(cell));
     }
 
     @DataTableType
-    public User getUser( DataTable userData )
-    {
+    public User getUser(DataTable userData) {
         Map<String, String> userDataMap = userData.asMaps().get(0);
-        User user = new User( );
-        user.setFirstName( userDataMap.get( "firstName" ) );
-        user.setSurName( userDataMap.get( "surName" ) );
-        user.setAge( Integer.parseInt( userDataMap.get( "age" ) ) );
+        User user = new User();
+        user.setFirstName(userDataMap.get("firstName"));
+        user.setSurName(userDataMap.get("surName"));
+        user.setAge(Integer.parseInt(userDataMap.get("age")));
         return user;
     }
 }

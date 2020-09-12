@@ -1,9 +1,5 @@
 package net.jakim.testing.steps.definitions;
 
-import io.cucumber.datatable.DataTable;
-import io.cucumber.java.DataTableType;
-import io.cucumber.java.ParameterType;
-import io.cucumber.java.Transpose;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

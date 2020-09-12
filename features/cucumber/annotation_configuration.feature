@@ -1,5 +1,7 @@
 Feature: Annotation Configuration
 
+  __Cucumber Custom Parameters__
+
   Cucumber Expressions were originally introduced in Cucumber-JVM 3.0.0.
   With it came the ability to register parameter- and data table-types by implementing the TypeRegistryConfigurer.
 
