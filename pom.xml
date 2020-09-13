@@ -94,6 +94,24 @@
 
     </dependencies>
 
+    <profiles>
+        <profile>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <name>Jakim Project</name>
+            </properties>
+            <id>default</id>
+        </profile>
+        <profile>
+            <id>other</id>
+            <properties>
+                <name>Other Project</name>
+            </properties>
+        </profile>
+    </profiles>
+
     <build>
         <plugins>
             <plugin>
@@ -127,6 +145,11 @@
                 <groupId>net.serenity-bdd.maven.plugins</groupId>
                 <artifactId>serenity-maven-plugin</artifactId>
                 <version>${serenity.maven.version}</version>
+                <configuration>
+                    <systemPropertyVariables>
+                        <serenity.project.name>${name}</serenity.project.name>
+                    </systemPropertyVariables>
+                </configuration>
                 <executions>
                     <execution>
                         <id>serenity-reports</id>
