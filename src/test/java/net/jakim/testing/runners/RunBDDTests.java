@@ -3,6 +3,7 @@ package net.jakim.testing.runners;
 
 import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
+import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
 
@@ -19,4 +20,8 @@ import org.junit.runner.RunWith;
 public class RunBDDTests
 {
 
+    @BeforeClass
+    public static void setReportInfo(){
+        System.setProperty("system.info.name", "jakim");
+    }
 }

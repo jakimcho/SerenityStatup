@@ -64,6 +64,7 @@ public class ConfigurationAnnotationDefinitions
     public void aUserOrderProducts( List<Product> products )
     {
         greetingService.printMyNum();
+        greetingService.printSerenityProperties();
         this.products = products;
     }
 

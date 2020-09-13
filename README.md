@@ -12,6 +12,7 @@ The main target approach to follow is BDD with cucumber.
 - Serenity Framework 2.3.2 
 - Selenium WebDriver
 - Cucumber 6
+- Spring integration
 - Junit 4.13
 - AssertJ
 
