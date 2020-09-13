@@ -3,18 +3,22 @@ package net.jakim.testing.steps.definitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import net.jakim.testing.configuration.CucumberSpringContextConfiguration;
 import net.jakim.testing.entities.Catalog;
 import net.jakim.testing.entities.Product;
 import net.jakim.testing.entities.ProductId;
 import net.jakim.testing.entities.User;
+import net.jakim.testing.services.GreetingService;
 import org.assertj.core.api.SoftAssertions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
 
 import java.util.List;
 import java.util.Map;
 
+@ContextConfiguration(classes = CucumberSpringContextConfiguration.class)
 public class ConfigurationAnnotationDefinitions
 {
-
     private Catalog catalog;
     private List<Product> products;
     private Map<ProductId, Product> productsMap;
@@ -22,16 +26,21 @@ public class ConfigurationAnnotationDefinitions
     private static final String EXPECTED_PRODUCT_NAME = "awestruck eels";
     private User user;
 
+    @Autowired
+    private GreetingService greetingService;
+
     @Given ( "the {catalog} catalog" )
     public void prepareCatalog( Catalog catalog )
     {
-
+        greetingService.sayHello();
+        greetingService.printMyNum();
         this.catalog = catalog;
     }
 
     @When ( "a user places the {product} in his basket" )
     public void aUserPlacesTheAwestruckEelsInHisBasket( Product product )
     {
+        greetingService.printMyNum();
         this.catalog.addProduct( product );
     }
 
@@ -54,6 +63,7 @@ public class ConfigurationAnnotationDefinitions
     @When ( "a user orders products:" )
     public void aUserOrderProducts( List<Product> products )
     {
+        greetingService.printMyNum();
         this.products = products;
     }
 

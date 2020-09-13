@@ -13,12 +13,13 @@ Feature: Annotation Configuration
   - @DocStringType
 
   This allows parameter-, data table- and docstring types to be mapped to objects which can only be created inside the test context.
-
+  @spring-debug
   Scenario: ParameterType Annotation Configuration
     Given the awesome catalog
     When a user places the awestruck eels in his basket
     Then you will be shocked at what happened next
 
+  @spring-debug
   Scenario: DataTableType Annotation Configuration
     When a user orders products:
       | name     | vendor | type  |

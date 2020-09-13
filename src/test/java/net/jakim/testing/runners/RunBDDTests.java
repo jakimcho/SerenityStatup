@@ -16,7 +16,6 @@ import org.junit.runner.RunWith;
         features = "features/",
         glue = "net/jakim/testing/steps/definitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE)
-
 public class RunBDDTests
 {
 
