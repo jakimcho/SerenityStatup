@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
                         "json:target/cucumber.json",
                         "junit:target/cucumber.xml"
                 },
-        features = "features/",
+        features = "classpath:features",
         glue = "net/jakim/testing/steps/definitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE)
 public class RunBDDTests
