@@ -19,9 +19,9 @@
         <surefire.version>3.0.0-M5</surefire.version>
         <failsafe.version>3.0.0-M5</failsafe.version>
 
-        <serenity.version>2.3.2</serenity.version>
-        <serenity.maven.version>2.3.2</serenity.maven.version>
-        <serenity.cucumber6.version>2.3.2</serenity.cucumber6.version>
+        <serenity.version>2.3.8</serenity.version>
+        <serenity.maven.version>2.3.8</serenity.maven.version>
+        <serenity.cucumber6.version>2.3.6</serenity.cucumber6.version>
         <cucumber.version>6.6.0</cucumber.version>
         <log4j.version>1.2.17</log4j.version>
         <slf4j.version>1.7.26</slf4j.version>

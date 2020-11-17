@@ -1,3 +1,4 @@
+@feature1
 Feature: Home Page
   __Home Page__
 
