@@ -31,11 +31,18 @@
         <spring-boot.version>2.3.3.RELEASE</spring-boot.version>
     </properties>
 
+
     <dependencies>
 
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-core</artifactId>
+            <version>${serenity.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-screenplay</artifactId>
             <version>${serenity.version}</version>
         </dependency>
 
@@ -47,9 +54,14 @@
 
         <dependency>
             <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-screenplay-webdriver</artifactId>
+            <version>${serenity.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-cucumber6</artifactId>
             <version>${serenity.cucumber6.version}</version>
-            <scope>test</scope>
         </dependency>
 
         <dependency>
