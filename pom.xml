@@ -14,15 +14,15 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <encoding>UTF-8</encoding>
-        <serenity.version>2.0.56</serenity.version>
-        <cucumber.version>4.2.0</cucumber.version>
-        <serenity.cucumber4.version>1.0.15</serenity.cucumber4.version>
-        <log4j.version>1.2.17</log4j.version>
-        <slf4j.version>1.7.26</slf4j.version>
-        <junit.version>4.13.1</junit.version>
-        <surefire.version>2.22.0</surefire.version>
-        <failsafe.version>2.22.0</failsafe.version>
-        <assertj.version>3.12.0</assertj.version>
+        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <serenity.version>3.3.10</serenity.version>
+        <log4j.version>2.17.1</log4j.version>
+        <slf4j.version>2.0.3</slf4j.version>
+        <junit5.version>5.8.2</junit5.version>
+        <surefire.version>3.0.0-M7</surefire.version>
+        <failsafe.version>3.0.0-M7</failsafe.version>
+        <assertj.version>3.23.1</assertj.version>
     </properties>
 
     <dependencies>
@@ -32,31 +32,29 @@
             <artifactId>serenity-core</artifactId>
             <version>${serenity.version}</version>
             <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>io.cucumber</groupId>
-                    <artifactId>cucumber-core</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <dependency>
             <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-cucumber4</artifactId>
-            <version>${serenity.cucumber4.version}</version>
+            <artifactId>serenity-junit5</artifactId>
+            <version>${serenity.version}</version>
             <scope>test</scope>
         </dependency>
 
+        <!-- JUNIT 5 DEPENDENCY-->
         <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>${cucumber.version}</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit5.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <version>${cucumber.version}</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit5.version}</version>
+            <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -65,7 +63,7 @@
 
         <dependency>
             <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
+            <artifactId>slf4j-reload4j</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
 
@@ -73,13 +71,6 @@
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <version>${assertj.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
         </dependency>
 
     </dependencies>
@@ -106,11 +97,12 @@
             </plugin>
 
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>${failsafe.version}</version>
                 <configuration>
                     <includes>
-                        <include>test_runners.RunBDDTests</include>
+                        <include>test_runners.*.java</include>
                     </includes>
                 </configuration>
                 <executions>
