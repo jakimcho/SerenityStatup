@@ -1,4 +1,4 @@
-package steps_definition;
+package net.jakim.steps_definition;
 
 public class CommonDefinitions
 {
