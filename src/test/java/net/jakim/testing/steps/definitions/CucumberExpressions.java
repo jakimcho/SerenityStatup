@@ -34,9 +34,9 @@ public class CucumberExpressions {
         log.info("the order is processed successfully");
     }
 
-    @Given("(.*) has entered the app")
-    public void enterTheApp() {
-        log.info("John or Merry Jane has entered the app");
+    @Given("{} has entered the app")
+    public void enterTheApp(String name) {
+        log.info("{} has entered the app", name);
     }
 
     @When("(s)he lists the first {int} article(s)")

@@ -13,8 +13,8 @@ public class BaseDefinitions {
     @Steps
     private BaseWebActions webUser;
 
-    @When("(.*) opens the {page} page")
-    public void jilOpensTheHomePage(String page) {
+    @When("{} opens the {page} page")
+    public void jilOpensTheHomePage(String name, String page) {
         webUser.opensPage(page);
     }
 

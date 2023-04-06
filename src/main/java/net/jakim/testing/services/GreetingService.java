@@ -1,8 +1,8 @@
 package net.jakim.testing.services;
 
 import net.serenitybdd.core.environment.EnvironmentSpecificConfiguration;
+import net.thucydides.core.environment.SystemEnvironmentVariables;
 import net.thucydides.core.util.EnvironmentVariables;
-import net.thucydides.core.util.SystemEnvironmentVariables;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
